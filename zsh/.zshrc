@@ -1,5 +1,5 @@
 export STARSHIP_CONFIG="$HOME/.config/starship/starship.toml"
-expoer XDG_CONFIG_HOME="$HOME/.config/" 
+export XDG_CONFIG_HOME="$HOME/.config/" 
 eval "$(starship init zsh)"
 fastfetch -c neofetch
 # ssh-agent
