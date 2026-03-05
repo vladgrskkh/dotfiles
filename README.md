@@ -6,7 +6,7 @@ This git repo is heavily inspired by this [repo](https://github.com/Sin-cy/dotfi
 
 Clone this repo.
 
-**Important**
+**Important**:
 Make sure you have git installed(comes pre installed with macos).
 
 ```zsh
@@ -28,7 +28,7 @@ After that go ahead and run this script.
 # Tools
 
 Check **install.sh** for all the tools.
-Below I will cover some of the important one.
+Below I will cover some of the important ones.
 
 - ohmyzsh(with some plugins)
 - homebrew
