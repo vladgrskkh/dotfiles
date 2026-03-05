@@ -104,62 +104,62 @@ return {
 		})
 
 		-- emmet_language_server
-		-- vim.lsp.config("emmet_language_server", {
-		--     filetypes = {
-		--         "css",
-		--         "eruby",
-		--         "html",
-		--         "javascript",
-		--         "javascriptreact",
-		--         "less",
-		--         "sass",
-		--         "scss",
-		--         "pug",
-		--         "typescriptreact",
-		--     },
-		--     init_options = {
-		--         includeLanguages = {},
-		--         excludeLanguages = {},
-		--         extensionsPath = {},
-		--         preferences = {},
-		--         showAbbreviationSuggestions = true,
-		--         showExpandedAbbreviation = "always",
-		--         showSuggestionsAsSnippets = false,
-		--         syntaxProfiles = {},
-		--         variables = {},
-		--     },
-		-- })
+		vim.lsp.config("emmet_language_server", {
+			filetypes = {
+				"css",
+				"eruby",
+				"html",
+				"javascript",
+				"javascriptreact",
+				"less",
+				"sass",
+				"scss",
+				"pug",
+				"typescriptreact",
+			},
+			init_options = {
+				includeLanguages = {},
+				excludeLanguages = {},
+				extensionsPath = {},
+				preferences = {},
+				showAbbreviationSuggestions = true,
+				showExpandedAbbreviation = "always",
+				showSuggestionsAsSnippets = false,
+				syntaxProfiles = {},
+				variables = {},
+			},
+		})
 
 		-- emmet_ls
-		-- vim.lsp.config("emmet_ls", {
-		--     filetypes = {
-		--         "html",
-		--         "typescriptreact",
-		--         "javascriptreact",
-		--         "css",
-		--         "sass",
-		--         "scss",
-		--         "less",
-		--         "svelte",
-		--     },
-		-- })
+		vim.lsp.config("emmet_ls", {
+			filetypes = {
+				"html",
+				"typescriptreact",
+				"javascriptreact",
+				"css",
+				"sass",
+				"scss",
+				"less",
+				"svelte",
+			},
+		})
 
 		-- ts_ls (TypeScript/JavaScript)
-		-- vim.lsp.config("ts_ls", {
-		--     filetypes = {
-		--         "javascript",
-		--         "javascriptreact",
-		--         "typescript",
-		--         "typescriptreact",
-		--     },
-		--     single_file_support = true,
-		--     init_options = {
-		--         preferences = {
-		--             includeCompletionsForModuleExports = true,
-		--             includeCompletionsForImportStatements = true,
-		--         },
-		--     },
-		-- })
+		vim.lsp.config("ts_ls", {
+			filetypes = {
+				"javascript",
+				"javascriptreact",
+				"typescript",
+				"typescriptreact",
+			},
+			single_file_support = true,
+			init_options = {
+				preferences = {
+					includeCompletionsForModuleExports = true,
+					includeCompletionsForImportStatements = true,
+				},
+			},
+		})
 
 		-- gopls
 		vim.lsp.config("gopls", {
@@ -195,9 +195,9 @@ return {
 		-- })
 
 		vim.lsp.enable("lua_ls")
-		-- vim.lsp.enable("emmet_language_server")
-		-- vim.lsp.enable("emmet_ls")
-		-- vim.lsp.enable("ts_ls")
+		vim.lsp.enable("emmet_language_server")
+		vim.lsp.enable("emmet_ls")
+		vim.lsp.enable("ts_ls")
 		vim.lsp.enable("gopls")
 		vim.lsp.enable("marksman")
 		-- vim.lsp.enable("astro")

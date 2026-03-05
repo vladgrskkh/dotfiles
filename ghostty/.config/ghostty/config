@@ -49,7 +49,7 @@
 # resize-overlay-duration = 4s 200ms
 # By default Reload config with shft + cmd + , 
 #config-file = themes/tokyonight
-background-opacity = 0.58
+background-opacity = 0.80
 background-blur-radius = 25
 
 font-family = JetBrainsMonoNL Nerd Font 

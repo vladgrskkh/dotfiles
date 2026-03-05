@@ -9,11 +9,11 @@ return {
 		-- if Eslint error configuration not found : change MasonInstall eslint@version or npm i -g eslint at a specific version
 		lint.linters_by_ft = {
 			go = { "golangcilint" },
-			javascript = { "biomejs" },
-			typescript = { "biomejs" },
-			javascriptreact = { "biomejs" },
-			typescriptreact = { "biomejs" },
-			svelte = { "biomejs" },
+			javascript = { "eslint_d" },
+			typescript = { "esling_d" },
+			javascriptreact = { "eslint_d" },
+			typescriptreact = { "eslint_d" },
+			svelte = { "eslint_d" },
 			python = { "pylint" },
 		}
 

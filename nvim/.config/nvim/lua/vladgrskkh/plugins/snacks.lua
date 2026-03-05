@@ -91,23 +91,33 @@ return {
 					},
 				},
 			},
-			-- image = {
-			--     enable = true,
-			--     doc = {
-			--         float = false,
-			--         inline = true,
-			--         max_width = 50,
-			--         max_height = 30,
-			--         wo = {
-			--             wrap = true,
-			--         },
-			--     },
-			--     convert = {
-			--         notify = true,
-			--         command = "magick",
-			--     },
-			--     img_dirs = { "img", "images", "assets", "static", "media", "attachments", "Archives/All-Vault-Images/", "~/Library", "~/Downloads" },
-			-- },
+			image = {
+				enable = true,
+				doc = {
+					float = false,
+					inline = true,
+					max_width = 50,
+					max_height = 30,
+					wo = {
+						wrap = true,
+					},
+				},
+				convert = {
+					notify = true,
+					command = "magick",
+				},
+				img_dirs = {
+					"img",
+					"images",
+					"assets",
+					"static",
+					"media",
+					"attachments",
+					"Archives/All-Vault-Images/",
+					"~/Library",
+					"~/Downloads",
+				},
+			},
 			dashboard = {
 				enabled = true,
 				sections = {
