@@ -4,6 +4,11 @@ return {
 		priority = 1000,
 		lazy = false,
 		opts = {
+			notify = { enabled = false },
+			notifier = { enabled = false },
+			input = {
+				enabled = true,
+			},
 			quickfile = {
 				enabled = true,
 				exclude = { "latex" },
@@ -12,11 +17,17 @@ return {
 				enabled = true,
 				matchers = {
 					frecency = true,
-					cwd_bonus = true,
+					cwd_bonus = false,
+				},
+				exclude = {
+					".git",
+					"node_modules",
+					"dist",
+					"build",
 				},
 				formatters = {
 					file = {
-						filename_first = false,
+						filename_first = true,
 						filename_only = false,
 						icon_width = 2,
 					},
