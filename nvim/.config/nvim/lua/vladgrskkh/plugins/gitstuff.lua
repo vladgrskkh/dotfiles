@@ -35,32 +35,75 @@ return {
 	},
 	{
 		"sindrets/diffview.nvim",
-		cmd = { "DiffviewOpen", "DiffviewClose", "DiffviewToggle", "DiffviewFocus" },
+		cmd = { "DiffviewOpen", "DiffviewClose", "DiffviewToggleFiles", "DiffviewFocusFiles", "DiffviewRefresh" },
 		keys = {
-			{ "<leader>go", "<cmd>DiffviewOpen<CR>", desc = "Open diffview" },
-			{ "<leader>gc", "<cmd>DiffviewClose<CR>", desc = "Close diffview" },
-			{ "<leader>gt", "<cmd>DiffviewToggle<CR>", desc = "Toggle diffview" },
+			{
+				"<leader>gd",
+				function()
+					local view = require("diffview.lib").get_current_view()
+					if view then
+						vim.cmd("DiffviewClose")
+					else
+						vim.cmd("DiffviewOpen")
+					end
+				end,
+				desc = "Toggle Diffview",
+			},
+			{ "<leader>gf", "<cmd>DiffviewToggleFiles<CR>", desc = "Toggle file panel" },
+			{ "<leader>gF", "<cmd>DiffviewFocusFiles<CR>", desc = "Focus file panel" },
+			{ "<leader>gr", "<cmd>DiffviewRefresh<CR>", desc = "Refresh diffview" },
 		},
 		config = function()
 			require("diffview").setup({
-				diff_panel_mode = "focus",
+				-- Enhanced diff highlighting
+				enhanced_diff_hl = true,
+
+				-- Git command configuration
+				git_cmd = { "git" },
+
+				-- Layout: diff2_horizontal, diff2_vertical, diff3_horizontal, diff3_vertical, diff3_mixed, diff4_mixed
+				view = {
+					default = {
+						layout = "diff2_horizontal",
+						winbar_info = true,
+						disable_diagnostics = true,
+					},
+					merge_tool = {
+						layout = "diff3_mixed",
+						winbar_info = true,
+						disable_diagnostics = true,
+					},
+				},
+
+				-- File panel configuration
 				file_panel = {
-					listing_style = "tree",
+					listing_style = "tree", -- "tree" or "list"
 					side = "left",
 					win_config = {
 						position = "left",
 						width = 35,
-						winblend = 0, -- transparency for file panel
+						winblend = 0,
 					},
 				},
+
+				-- Diff panel mode: "focus" or "diff"
+				diff_panel_mode = "focus",
+
+				-- Keymaps
 				keymaps = {
 					view = {
 						{ "n", "<tab>", "select_next_entry", { desc = "Next entry" } },
 						{ "n", "<s-tab>", "select_prev_entry", { desc = "Previous entry" } },
 						{ "n", "q", "close", { desc = "Close diffview" } },
+						{ "n", "<leader>co", "choose_ours", { desc = "Choose OURS" } },
+						{ "n", "<leader>ct", "choose_theirs", { desc = "Choose THEIRS" } },
+						{ "n", "<leader>cb", "choose_base", { desc = "Choose BASE" } },
+						{ "n", "]x", "next_conflict", { desc = "Next conflict" } },
+						{ "n", "[x", "prev_conflict", { desc = "Prev conflict" } },
 					},
 					file_panel = {
 						{ "n", "q", "close", { desc = "Close diffview" } },
+						{ "n", "<cr>", "select_entry", { desc = "Select entry" } },
 					},
 				},
 			})
