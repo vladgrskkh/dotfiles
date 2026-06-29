@@ -7,6 +7,7 @@ return {
 		priotity = 1000,
 		config = function()
 			require("catppuccin").setup({
+				auto_integrations = true,
 				flavour = "mocha",
 				background = {
 					light = "latte",
@@ -50,6 +51,7 @@ return {
 		-- priority = 1000,
 		config = function()
 			require("rose-pine").setup({
+				auto_integrations = true,
 				variant = "main", -- auto, main, moon, or dawn
 				dark_variant = "main", -- main, moon, or dawn
 				dim_inactive_windows = false,
@@ -63,17 +65,60 @@ return {
 					transparency = true,
 				},
 				highlight_groups = {
-					ColorColumn = { bg = "#1C1C21" },
+					ColorColumn = { bg = "none" },
 					Normal = { bg = "none" }, -- Main background remains transparent
-					Pmenu = { bg = "", fg = "#e0def4" }, -- Completion menu background
-					PmenuSel = { bg = "#4a465d", fg = "#f8f5f2" }, -- Highlighted completion item
-					PmenuSbar = { bg = "#191724" }, -- Scrollbar background
-					PmenuThumb = { bg = "#9ccfd8" }, -- Scrollbar thumb
+					NormalFloat = { bg = "none" },
+					Pmenu = { bg = "none" }, -- Completion menu background
+					PmenuSel = { bg = "", fg = "NONE" }, -- Highlighted completion item
+					FloatBorder = { bg = "base" },
+					FloatTitle = { bg = "none" },
+					TelescopeBorder = { fg = "highlight_high", bg = "none" },
+					TelescopeNormal = { bg = "none" },
+					TelescopePromptNormal = { bg = "base" },
+					TelescopeResultsNormal = { fg = "subtle", bg = "none" },
+					TelescopeSelection = { fg = "text", bg = "base" },
+					TelescopeSelectionCaret = { fg = "rose", bg = "rose" },
+					-- Diffview
+					DiffviewNormal = { bg = "none" },
+					DiffviewFilePanelTitle = { bg = "none" },
+					DiffviewFilePanelCounter = { bg = "none" },
+					DiffviewFilePanelRootPath = { bg = "none" },
+					DiffviewFilePanelPath = { bg = "none" },
+					DiffviewFilePanelFileName = { bg = "none" },
+					DiffviewFilePanelSelected = { bg = "surface", blend = 50 },
+					DiffviewFilePanelConflicts = { bg = "none" },
 				},
 				enable = {
-					terminal = false,
+					terminal = true,
 					legacy_highlights = false, -- Improve compatibility for previous versions of Neovim
 					migrations = true, -- Handle deprecated options automatically
+				},
+				groups = {
+					border = "muted",
+					link = "iris",
+					panel = "surface",
+					error = "love",
+					hint = "iris",
+					info = "foam",
+					note = "pine",
+					todo = "rose",
+					warn = "gold",
+					git_add = "foam",
+					git_change = "rose",
+					git_delete = "love",
+					git_dirty = "rose",
+					git_ignore = "muted",
+					git_merge = "iris",
+					git_rename = "pine",
+					git_stage = "iris",
+					git_text = "rose",
+					git_untracked = "subtle",
+					h1 = "iris",
+					h2 = "foam",
+					h3 = "rose",
+					h4 = "gold",
+					h5 = "pine",
+					h6 = "foam",
 				},
 			})
 

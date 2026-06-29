@@ -42,6 +42,14 @@ return {
 		})
 	end,
 	opts = {
+		-- overrides = {
+		-- 	filetype = {},
+		-- 	buftype = {
+		-- 		nofile = {
+		-- 			enabled = false,
+		-- 		},
+		-- 	},
+		-- },
 		restart_highlighter = true,
 		heading = {
 			sign = false,
@@ -67,6 +75,8 @@ return {
 			sign = false,
 			width = "block",
 			right_pad = 1,
+			highlight = "RenderMarkdownCode",
+			highlight_inline = "RenderMarkdownCodeInline",
 		},
 		bullet = {
 			-- Turn on / off list bullet rendering

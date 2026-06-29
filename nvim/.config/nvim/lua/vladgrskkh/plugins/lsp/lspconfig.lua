@@ -71,7 +71,18 @@ return {
 			virtual_text = true,
 			underline = true,
 			update_in_insert = false,
+			float = {
+				focusable = false,
+				style = "minimal",
+				border = "rounded",
+				source = true,
+			},
 		})
+
+		vim.keymap.set("n", "<leader>lx", function()
+			local current = vim.diagnostic.config().virtual_text
+			vim.diagnostic.config({ virtual_text = not current })
+		end, { desc = "Toggle LSP virtual text" })
 
 		-- Setup servers
 		local capabilities = vim.lsp.protocol.make_client_capabilities()

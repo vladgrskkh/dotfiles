@@ -17,8 +17,13 @@ return {
 				completion = {
 					menu = {
 						auto_show = true,
+						winblend = 15,
 					},
 					documentation = {
+						window = {
+							winblend = 10,
+							winhighlight = "Normal:BlinkCmpDoc,FloatBorder:BlinkCmpDocBorder,CursorLine:BlinkCmpDocCursorLine,Search:None",
+						},
 						auto_show = true,
 					},
 					ghost_text = {
@@ -35,7 +40,9 @@ return {
 					enabled = true,
 					keymap = { preset = "cmdline" },
 					completion = {
-						menu = { auto_show = true },
+						menu = {
+							auto_show = true,
+						},
 					},
 				},
 				sources = {
